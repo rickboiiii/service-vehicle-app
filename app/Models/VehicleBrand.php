@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class VehicleBrand extends Model
 {
     use HasFactory;
+
+    protected $guarded = [
+        'id',
+    ];
+
+    protected $fillable = [
+        'name',
+        'founder',
+        'founded',
+    ];
+
+    public $timestamps = false;
 }

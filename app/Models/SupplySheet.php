@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class SupplySheet extends Model
 {
     use HasFactory;
+
+    protected $guarded = [
+        'id',
+        'service_item_id',
+        'work_sheet_id',
+    ];
+
+    protected $fillable = [
+        'number',
+        'quantity',
+        'price',
+        'discount',
+        'value',
+    ];
+
+    public $timestamps = false;
 }

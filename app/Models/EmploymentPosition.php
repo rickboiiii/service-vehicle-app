@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class EmploymentPosition extends Model
 {
     use HasFactory;
+
+    protected $guarded = [
+        'id',
+    ];
+
+    protected $fillable = [
+        'position',
+        'title',
+        'description',
+    ];
+
+    public $timestamps = false;
 }
