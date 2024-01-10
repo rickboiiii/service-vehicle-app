@@ -6,24 +6,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css" integrity="sha512-34s5cpvaNG3BknEWSuOncX28vz97bRI59UnVtEEpFX536A7BtZSJHsDyFoCl8S7Dt2TPzcrCEoHBGeM4SUBDBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Vehicle Service</title>
 </head>
-<body>
+<body style="{{ $bodyStyle ?? '' }}">
 
     @yield('modals')
 
     <div class="container py-3">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
+        <nav class="navbar navbar-expand-lg bg-dark bg-gradient mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">Vehicle Service</a>
+                <a class="navbar-brand text-white-50" href="/">Vehicle Service</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link {{ (str_contains(\Illuminate\Support\Facades\Route::currentRouteName(), 'service-sheets')) ? 'active' : '' }}" aria-current="page" href="{{ route('service-sheets.index') }}">Service sheets</a>
+                            <a class="nav-link text-white-50 {{ (str_contains(\Illuminate\Support\Facades\Route::currentRouteName(), 'service-sheets')) ? 'active' : '' }}" aria-current="page" href="{{ route('service-sheets.index') }}">Service sheets</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ (str_contains(\Illuminate\Support\Facades\Route::currentRouteName(), 'vehicles')) ? 'active' : '' }}" href="{{ route('vehicles.index') }}">Vehicle registry</a>
+                            <a class="nav-link text-white-50 {{ (str_contains(\Illuminate\Support\Facades\Route::currentRouteName(), 'vehicles')) ? 'active' : '' }}" href="{{ route('vehicles.index') }}">Vehicle registry</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50 {{ (str_contains(\Illuminate\Support\Facades\Route::currentRouteName(), 'reports')) ? 'active' : '' }}" href="{{ route('reports-page') }}">Reports</a>
                         </li>
                     </ul>
                 </div>

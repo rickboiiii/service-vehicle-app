@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\Controller;
 use \App\Http\Controllers\ServiceSheetController;
 use \App\Http\Controllers\VehicleController;
 
@@ -15,8 +16,9 @@ use \App\Http\Controllers\VehicleController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(Controller::class)->group(function () {
+    Route::get('/', 'landingPage')->name('landing-page');
+    Route::get('/reports', 'reportsPage')->name('reports-page');
 });
 
 Route::controller(ServiceSheetController::class)->prefix('/service_sheets')->name('service-sheets.')->group(function () {
