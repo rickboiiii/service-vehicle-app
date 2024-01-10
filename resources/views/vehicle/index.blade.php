@@ -1,4 +1,13 @@
 @extends('snippets.layout')
+
+@section('modals')
+    @include('snippets.modal', ['data' => $data])
+@endsection
+
+@section('additional_buttons')
+    <button class="btn btn-outline-success mx-1" type="button" data-bs-toggle="modal" data-bs-target="#formModal">Add<i class="bi-plus"></i></button>
+@endsection
+
 @section('content')
 
 <table class="table table-hover">

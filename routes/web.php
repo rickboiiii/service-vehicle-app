@@ -25,6 +25,11 @@ Route::controller(ServiceSheetController::class)->prefix('/service_sheets')->nam
 });
 
 Route::controller(VehicleController::class)->prefix('/vehicles')->name('vehicles.')->group(function () {
+    Route::get('/fetch-data', 'fetchData')->name('fetch-data');
+
     Route::get('/', 'index')->name('index');
+    Route::post('/', 'save')->name('save');
     Route::get('/{id}', 'fetch')->name('fetch');
+    Route::put('/{id}', 'update')->name('update');
+    Route::delete('/{id}', 'delete')->name('delete');
 });

@@ -12,17 +12,17 @@ class Vehicle extends Model
 
     protected $guarded = [
         'id',
-        'brand_id',
-        'color_id',
-        'type_id',
-        'owner_id',
     ];
 
     protected $fillable = [
+        'brand_id',
+        'color_id',
+        'type_id',
         'num_wheels',
         'num_doors',
         'manufacture_date',
         'vehicle_identification_number',
+        'owner_id',
         'registration',
         'registration_date',
     ];

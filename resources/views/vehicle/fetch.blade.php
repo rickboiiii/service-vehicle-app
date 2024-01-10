@@ -1,4 +1,15 @@
 @extends('snippets.layout')
+
+@section('modals')
+    @include('snippets.edit', ['data' => $data])
+    @include('snippets.delete', ['id' => $vehicle->id])
+@endsection
+
+@section('additional_buttons')
+    <button class="btn btn-warning mx-1" type="button" data-bs-toggle="modal" data-bs-target="#formEditModal">Edit <i class="bi-pen"></i></button>
+    <button class="btn btn-danger mx-1" type="button" data-bs-toggle="modal" data-bs-target="#formDeleteModal">Delete <i class="bi-trash"></i></button>
+@endsection
+
 @section('content')
 
 <div class="card my-2">
