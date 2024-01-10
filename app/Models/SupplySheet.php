@@ -24,4 +24,8 @@ class SupplySheet extends Model
     ];
 
     public $timestamps = false;
+
+    public function relServiceItem() {
+        return $this->hasOne(ServiceItem::class, 'id', 'service_item_id');
+    }
 }

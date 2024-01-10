@@ -23,4 +23,12 @@ class ServiceSheet extends Model
     ];
 
     public $timestamps = false;
+
+    public function relEmployee() {
+        return $this->hasOne(Employee::class, 'id', 'employee_id');
+    }
+
+    public function relVehicle() {
+        return $this->hasOne(Vehicle::class, 'id', 'vehicle_id');
+    }
 }

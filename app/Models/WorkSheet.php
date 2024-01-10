@@ -26,4 +26,12 @@ class WorkSheet extends Model
     ];
 
     public $timestamps = false;
+
+    public function relEmployee() {
+        return $this->hasOne(Employee::class, 'id', 'employee_id');
+    }
+
+    public function relServiceType() {
+        return $this->hasOne(ServiceType::class, 'id', 'service_type_id');
+    }
 }

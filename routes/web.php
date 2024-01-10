@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\ServiceSheetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::controller(ServiceSheetController::class)->prefix('/service_sheets')->name('service-sheets.')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{id}', 'fetch')->name('fetch');
+});
+
+Route::get('/vehicles', function () {
+
 });
