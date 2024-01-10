@@ -5,7 +5,7 @@
 <div class="card my-2">
     <div class="card-body">
         <h5 class="card-title">{{ $sheet->number }}</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">Date: {{ $sheet->date }} <br> Mileage: {{ $sheet->mileage }}</h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Date: {{ date('d.m.Y', strtotime($sheet->date)) }} <br> Mileage: {{ $sheet->mileage }}</h6>
         <p class="card-text">Customer states: <br> {{ $sheet->customer_states }}</p>
         <p class="card-text">Service request accepted by: {{ $sheet->relEmployee->first_name . ' ' . $sheet->relEmployee->last_name }}</p>
     </div>

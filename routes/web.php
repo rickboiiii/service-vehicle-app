@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ServiceSheetController;
+use \App\Http\Controllers\VehicleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ Route::controller(ServiceSheetController::class)->prefix('/service_sheets')->nam
     Route::get('/{id}', 'fetch')->name('fetch');
 });
 
-Route::get('/vehicles', function () {
-
+Route::controller(VehicleController::class)->prefix('/vehicles')->name('vehicles.')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{id}', 'fetch')->name('fetch');
 });

@@ -19,7 +19,7 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('service-sheets.index') }}">Service sheets</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Vehicle registry</a>
+                        <a class="nav-link" href="{{ route('vehicles.index') }}">Vehicle registry</a>
                     </li>
                 </ul>
             </div>

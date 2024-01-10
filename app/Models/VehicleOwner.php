@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class VehicleOwner extends Model
 {
     use HasFactory;
+
+    protected $table = 'vehicle_owner';
 
     protected $guarded = [
         'id',
@@ -26,4 +29,11 @@ class VehicleOwner extends Model
     ];
 
     public $timestamps = false;
+
+    public function address() {
+        $city = DB::table('cities')->select('name')->where('id', $this->city_id)->first()->name;
+        $country = DB::table('countries')->select('name')->where('id', $this->country_id)->first()->name;
+
+        return $this->address . ', ' . $city . ', ' . $country;
+    }
 }
