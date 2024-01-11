@@ -1,12 +1,13 @@
 
-#Setup
-###Install following
+# Setup
+
+### Install following
 - Local server of your choosing, laragon, wamp, xamp etc.
 - PHP 8.2.8
 - Composer
 - GitBash
 
-###Starting up local instance 
+### Starting up local instance 
 - Go to servers website hosting folder
 - Open GitBash, and type following commands:
 - `git clone https://github.com/rickboiiii/service-vehicle-app.git`
@@ -19,7 +20,7 @@
 - After that edit `.env` file accordingly, to your database needs
 - To start project open GitBash and write `php artisan serve`
 
-#Code writing
+# Code writing
 - Keep it RESTful
 - KISS always
 - Write TODOs, comments when needed
@@ -27,15 +28,15 @@
 - Clean code, clean head
 - Write sensible commit messages, example: finished vehicle model refactoring NOT done W win win
 
-##General TODOs
+## General TODOs
 - Implement CSRF, Authentication
 - Create reusable BLADE components
 - Implement SCSS, custom UI/UX
 - Clean up and create reusable functions
 
-###Credits
-- Database design @rickboiiii
-- Project design @rickboiiii
+### Credits
+- Database design [@rickboiiii](https://github.com/rickboiiii)
+- Project design [@rickboiiii](https://github.com/rickboiiii)
 
 ## License
 
