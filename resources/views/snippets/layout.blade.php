@@ -58,6 +58,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-white-50 {{ (str_contains(\Illuminate\Support\Facades\Route::currentRouteName(), 'reports')) ? 'active' : '' }}" title="Useful system reports regarding employees, vehicles etc." href="{{ route('reports-page') }}">{{ strtoupper('Reports') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50 {{ (str_contains(\Illuminate\Support\Facades\Route::currentRouteName(), 'services')) ? 'active' : '' }}" title="More information about current services we offer" href="{{ route('services-page') }}">{{ strtoupper('Services') }}</a>
+                        </li>
                     </ul>
                 </div>
                 @yield('additional_buttons')

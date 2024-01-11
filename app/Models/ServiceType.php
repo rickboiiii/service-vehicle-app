@@ -19,4 +19,17 @@ class ServiceType extends Model
     ];
 
     public $timestamps = false;
+
+    public static function pluckNew(string $column) {
+
+        $services = self::all();
+        $plucked = [];
+        $counter = 1;
+
+        foreach ($services as $service) {
+            $plucked[$counter++] = $service->name;
+        }
+
+        return $plucked;
+    }
 }

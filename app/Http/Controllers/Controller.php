@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ServiceType;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -51,6 +52,15 @@ class Controller extends BaseController
 
         return view('reports.index', [
             'report' => $report,
+        ]);
+    }
+
+    public function servicesPage() {
+
+        $services = ServiceType::pluckNew('name');
+
+        return view('services.index', [
+            'services' => $services,
         ]);
     }
 }
