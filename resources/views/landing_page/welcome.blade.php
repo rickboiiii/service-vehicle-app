@@ -1,5 +1,9 @@
 @extends('snippets.layout')
 
+@section('additional_buttons')
+    <a href="#" class="text-white-50" title="Login as an employee"><i id="loginIcon" class="bi bi-door-closed"></i></a>
+@endsection
+
 @section('content')
 
     <div class="container p-5" style="background-color: rgba(0, 0, 0, 0.2);">
@@ -53,4 +57,19 @@
         @endif
     </div>
 
+@endsection
+
+@section('scripts')
+    <script>
+        /* TODO: write as vanilla JS */
+        $(document).ready(function () {
+            $('#loginIcon').on('mouseenter', function () {
+                $(this).addClass('bi-door-open');
+                $(this).removeClass('bi-door-closed');
+            }).on('mouseleave', function () {
+                $(this).addClass('bi-door-closed');
+                $(this).removeClass('bi-door-open');
+            });
+        });
+    </script>
 @endsection
